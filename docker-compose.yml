@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        - DEV=true  # Fixed spacing issue in args
+    ports:
+      - "8000:8000"  # Indentation and syntax are correct
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
